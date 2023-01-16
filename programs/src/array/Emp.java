@@ -1,7 +1,4 @@
-package Array;
-
-import java.util.ArrayList;
-import java.util.List;
+package array;
 
 class Employee {
     public String name;
@@ -11,8 +8,8 @@ class Employee {
         return name;
     }
 
-    public Integer getSalary() {
-        return salary;
+    public Integer[] getSalary() {
+        return new Integer[]{salary};
     }
 
     public void setName(String name) {
@@ -44,19 +41,33 @@ public class Emp {
         obj[9] = new Employee("tejas", 109);
 
         Employee employee = obj[0];
-        for (int i =0 ;i< obj.length;i++){
+        for (int i = 0; i < obj.length; i++) {
 
-            //for max salary
-            if(employee.getSalary()<obj[i].getSalary()){
-                employee =obj[i];
+/*            //for max salary
+            if (employee.getSalary() < obj[i].getSalary()) {
+                employee = obj[i];
             }
+            System.out.println("max salary=" + employee.getSalary());
             //for min salary
             if(employee.getSalary()>obj[i].getSalary()){
                 employee =obj[i];
             }
+            System.out.println("min salary=" + employee.getSalary());*/
 
-            System.out.println("max salary="+employee.getSalary());
+/*            //find second max salary
+           int size = obj.length;
+            Arrays.sort(obj[i].getSalary());
+            Integer[] res = obj[size-2].getSalary();
+            System.out.println(Arrays.toString(res));
+
+            //find second min salary
+            Arrays.sort(obj[i].getSalary());
+            Integer[] res = obj[1].getSalary();
+            System.out.println(Arrays.toString(res));*/
+
         }
+
+
     }
 
 }

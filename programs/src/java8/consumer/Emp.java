@@ -4,7 +4,7 @@ package java8.consumer;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-class Emp{
+public class Emp{
     String name;
     String designation;
     double salary;
@@ -14,6 +14,38 @@ class Emp{
         this.name = name;
         this.designation = designation;
         this.salary = salary;
+        this.city = city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary() {
+        this.salary = salary;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
         this.city = city;
     }
 
@@ -27,7 +59,7 @@ class Emp{
                 '}';
     }
 }
-public class ConsumerEmployeeDemo {
+class ConsumerEmployeeDemo {
     public static void main(String[] args) {
         ArrayList<Emp> list = new ArrayList<>();
         Emp e1 = new Emp("Anup", "employee", 17000, "modasa");

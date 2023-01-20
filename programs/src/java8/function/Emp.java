@@ -1,7 +1,5 @@
 package java8.function;
 
-import java8.predicate.Employee;
-
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Predicate;

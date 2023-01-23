@@ -1,15 +1,23 @@
-package java8.stream;
+package java8.optionalClass;
 
 import java8.consumer.Emp;
+import jdk.nashorn.internal.runtime.options.Option;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
-public class StreamDemo {
+public class OptionalClass {
     public static void main(String[] args) {
+
+        String name="Anup panchal";
+
+        Optional<String> optional=Optional.ofNullable(name);
+             System.out.println(optional.isPresent());
+            System.out.println(optional.get());
+            System.out.println(optional.orElse("no values"));
+
+
         ArrayList<Emp> list = new ArrayList<>();
         Emp e1 = new Emp("Anup", "employee", 17000, "modasa");
         Emp e2 = new Emp("Hetvi", "Manager", 42000, "Ahemdabad");
@@ -23,26 +31,12 @@ public class StreamDemo {
         list.add(e4);
         list.add(e5);
         list.add(e6);
-
         System.out.println(list);
 
-        List<Double> e=list.stream().map(emp -> emp.getSalary()*2).collect(Collectors.toList());
-        List<Emp> s=list.stream().filter(l -> l.getName().length()>=5).collect(Collectors.toList());
-        long c=list.stream().filter(l -> l.getName().length()>=5).count();
-        List<Emp> ee=list.stream().sorted(Comparator.comparing(Emp::getSalary)).collect(Collectors.toList());
         Optional<Emp> aa=list.stream().min(Comparator.comparing(Emp::getSalary));
-        Optional<Emp> bb=list.stream().max(Comparator.comparing(Emp::getSalary));
-        List<Emp> l1=list.stream().sorted( (emp1,emp2) ->Double.compare(emp2.getSalary(),emp1.getSalary())).collect(Collectors.toList());
-
-        System.out.println(l1);
-
-
-        System.out.println(e);
-        System.out.println(s);
-        System.out.println(c);
         System.out.println(aa);
-        System.out.println(ee);
+        Optional<Emp> bb=list.stream().max(Comparator.comparing(Emp::getSalary));
         System.out.println(bb);
-        list.forEach(System.out::println);
+
     }
 }

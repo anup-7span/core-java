@@ -45,15 +45,15 @@ public class Emp {
         list.add(e6);
         System.out.println(list);
 
-        Function<ArrayList<Employee1>,Double> f= l->{
+/*        Function<ArrayList<Employee1>,Double> f= l->{
                 double total =0;
                 for (Employee1 l1 : l){
                     total= total + l1.salary;
                 }
                 return total;
         };
-        System.out.println("Total salary of employee:-"+f.apply(list));
-
+        System.out.println("Total salary of employee:-"+f.apply(list));*/
+        System.out.println("before update"+list);
         Predicate<Employee1> p= e->e.salary<27000;
         Function<Employee1,Employee1> f1=e->{
             e.salary=e.salary+3000;
@@ -63,11 +63,10 @@ public class Emp {
         ArrayList<Employee1> list1=new ArrayList<>();
         for(Employee1 e : list){
             if (p.test(e)){
-                f1.apply(e);
+                //f1.apply(e);
                 list1.add(f1.apply(e));
             }
         }
-        System.out.println("before update"+list);
         System.out.println("After update:-"+list1);
     }
 }

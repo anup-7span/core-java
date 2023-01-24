@@ -1,7 +1,11 @@
 package java8.consumer;
 
 
+import java8.function.Student;
+import java8.predicate.Employee;
+
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 public class Emp{
@@ -9,6 +13,15 @@ public class Emp{
     String designation;
     double salary;
     String city;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Emp emp = (Emp) o;
+        return Double.compare(emp.salary, salary) == 0 && Objects.equals(name, emp.name) && Objects.equals(designation, emp.designation) && Objects.equals(city, emp.city);
+    }
+
 
     public Emp(String name, String designation, double salary, String city) {
         this.name = name;
@@ -58,9 +71,11 @@ public class Emp{
                 ", city='" + city + '\'' +
                 '}';
     }
+
 }
 class ConsumerEmployeeDemo {
     public static void main(String[] args) {
+
         ArrayList<Emp> list = new ArrayList<>();
         Emp e1 = new Emp("Anup", "employee", 17000, "modasa");
         Emp e2 = new Emp("Hetvi", "Manager", 42000, "Ahemdabad");

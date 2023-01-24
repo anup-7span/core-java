@@ -43,6 +43,9 @@ public class Emp {
         Employee employee = obj[0];
         for (int i = 0; i < obj.length; i++) {
 
+
+            System.out.println( "I      "+i);
+
 /*            //for max salary
             if (employee.getSalary() < obj[i].getSalary()) {
                 employee = obj[i];

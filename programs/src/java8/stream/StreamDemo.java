@@ -146,9 +146,10 @@ public class StreamDemo {
         System.out.println("----------------------------------------");
 
         List<Emp> peek = list.stream().peek(System.out::println).collect(Collectors.toList());
-        peek.forEach(System.out::println);
-
         System.out.println("----------------------------------------");
+
+        Optional<Emp> reduce = list.stream().reduce((emp1, emp2) -> (emp1.getSalary() == emp2.getSalary() ? emp1:emp2));
+        System.out.println("Reduce:-"+reduce);
 
     }
 

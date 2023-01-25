@@ -11,6 +11,14 @@ public class Student {
         this.name = name;
         this.marks = marks;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", marks=" + marks +
+                '}';
+    }
 }
 class Test{
     public static void main(String[] args) {
@@ -19,7 +27,7 @@ class Test{
         Student s1 = new Student("anup", 77);
         Student s2 = new Student("hetvi", 97);
         Student s3 = new Student("harsh", 92);
-        Student s4 = new Student("styajit", 23);
+        Student s4 = new Student("satyajit", 23);
         Student s5 = new Student("nanadni", 60);
         ArrayList<Student> list = new ArrayList<>();
         list.add(s1);

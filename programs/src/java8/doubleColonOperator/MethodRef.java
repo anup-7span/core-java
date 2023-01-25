@@ -12,7 +12,8 @@ public class MethodRef
 
 	public static void main(String[] args) {
 		
-		Interf i= MethodRef::m2;
-		i.m1();
+		//Interf i= MethodRef::m2;
+		//i.m1();
+		 MethodRef.m2();
 	}
 }

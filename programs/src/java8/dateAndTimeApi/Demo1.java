@@ -10,7 +10,7 @@ public class Demo1
 		System.out.println(time);*/
 
 		LocalDate date=LocalDate.now();
-		System.out.println(date);
+		System.out.println("current date:-"+date);
 
 		int dd=date.getDayOfMonth();
 
